@@ -17,27 +17,20 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - EmergencyWithdrawn
-        - OwnershipTransferred
-        - Paused
         - RewardRateUpdated
         - RewardsClaimed
         - Staked
         - StakingInitialized
-        - StakingPaused
-        - StakingUnpaused
-        - TokenRecovered
-        - Unpaused
         - Withdrawn
+        - User
+        - StakePosition
+        - ProtocolMetrics
       abis:
         - name: StakingContract
           file: ./abis/StakingContract.json
       eventHandlers:
         - event: EmergencyWithdrawn(indexed address,uint256,uint256,uint256,uint256)
           handler: handleEmergencyWithdrawn
-        - event: OwnershipTransferred(indexed address,indexed address)
-          handler: handleOwnershipTransferred
-        - event: Paused(address)
-          handler: handlePaused
         - event: RewardRateUpdated(uint256,uint256,uint256,uint256)
           handler: handleRewardRateUpdated
         - event: RewardsClaimed(indexed address,uint256,uint256,uint256,uint256)
@@ -46,14 +39,6 @@ dataSources:
           handler: handleStaked
         - event: StakingInitialized(indexed address,uint256,uint256)
           handler: handleStakingInitialized
-        - event: StakingPaused(uint256)
-          handler: handleStakingPaused
-        - event: StakingUnpaused(uint256)
-          handler: handleStakingUnpaused
-        - event: TokenRecovered(indexed address,uint256,uint256)
-          handler: handleTokenRecovered
-        - event: Unpaused(address)
-          handler: handleUnpaused
         - event: Withdrawn(indexed address,uint256,uint256,uint256,uint256,uint256)
           handler: handleWithdrawn
       file: ./src/staking-contract.ts
