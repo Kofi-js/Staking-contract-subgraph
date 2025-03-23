@@ -16,7 +16,7 @@ services:
     environment:
       postgres_host: postgres
       postgres_user: graph-node
-      postgres_pass: let-me-in
+      postgres_pass: 
       postgres_db: graph-node
       ipfs: "ipfs:5001"
       ethereum: "mainnet:http://host.docker.internal:8545"
